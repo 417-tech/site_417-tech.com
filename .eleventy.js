@@ -16,6 +16,16 @@ async function compileScss(inputContent, inputPath) {
 	};
 }
 
+export const config = {
+	dir: {
+		input: "src",
+		includes: "_includes",
+		layouts: "_layouts",
+		data: "_data",
+		output: "_site",
+	},
+};
+
 export default async function (eleventyConfig) {
 	// Required because of my strict .gitignore causing 0 files to be processed
 	eleventyConfig.setUseGitIgnore(false);
@@ -29,14 +39,11 @@ export default async function (eleventyConfig) {
 		useLayouts: false,
 		compile: compileScss,
 	});
-}
 
-export const config = {
-	dir: {
-		input: "src",
-		includes: "_includes",
-		layouts: "_layouts",
-		data: "_data",
-		output: "_site",
-	},
-};
+	// TODO: Look into SCSS storage so they're not passthrough copied to the site
+	eleventyConfig.addPassthroughCopy(`${config.dir.input}/assets`);
+	// Passthrough copy any referenced assets within the HTML-output content
+	eleventyConfig.addPassthroughCopy(`${config.dir.input}/**`, {
+		mode: "html-relative",
+	});
+}

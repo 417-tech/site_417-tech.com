@@ -1,0 +1,27 @@
+$color-background: #121212;
+$color-text: #d6d6d6;
+
+$color-primary: #ba68c8;
+$color-secondary: #0d47a1;
+$color-accent-primary: #81a685;
+$color-accent-secondary: #004d3e;
+
+// Using * {} for any settings is overridden by Bootstrap / _reboot.scss
+
+body {
+	background-color: $color-background;
+	color: $color-text;
+	border: 1px solid white;
+}
+
+header {
+	background: blue;
+}
+
+main {
+	background: purple;
+}
+
+footer {
+	background: blue;
+}
