@@ -1,0 +1,13 @@
+**
+
+!.git*
+!README*
+
+!package.json
+!package-lock.json
+
+!.eleventy.js
+!.eleventyignore
+
+!src/
+!src/**
