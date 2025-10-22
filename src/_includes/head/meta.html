@@ -1,15 +1,13 @@
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <meta
 	name="author"
-	content="{{ meta.author | default: site.meta.author | default: '' }}"
-/>
+	content="{{ meta.author | default: site.meta.author | default: '' }}">
 <meta
 	name="description"
-	content="{{ meta.description | default: site.meta.description | default: '' }}"
-/>
+	content="{{ meta.description | default: site.meta.description | default: '' }}">
 {%- # TODO: Check if this concat and join has any edge cases %}
 <meta
 	name="keywords"
-	content="{{ meta.keywords | concat: site.meta.keywords | join: ', ' }}"
-/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+	content="{{ meta.keywords | concat: site.meta.keywords | join: ', ' }}">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">

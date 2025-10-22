@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
 {% include "head.html" -%}
 </head>
 <body class="d-flex flex-column min-vh-100">
 {% include "header.html" -%}
 {% # Check if we want container-fluid for 100% width or just .container and pad everything -%}
-<main class="container-fluid">
-{{ content -}}
-</main>
-{% include "footer.html" -%} {% include "scripts.html" -%}
+<main class="container-fluid">{{ content -}}</main>
+{% include "footer.html" -%}
+{% include "scripts.html" -%}
 </body>
 </html>

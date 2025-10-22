@@ -1,3 +1,17 @@
-<header class="container-fluid">
-Header
+<header>
+{% bootstrapNavbar "md" -%}
+{% bootstrapNavbarBrand site.title -%}
+{% bootstrapNavbarToggler "header-navbar" -%}
+{% bootstrapNavbarNav "header-navbar" -%}
+{% bootstrapNavbarItemDropdown "/services" -%}
+{% bootstrapNavbarItemDropdownItem "/services/consultation" -%}
+{% bootstrapNavbarItemDropdownItem "/services/development" -%}
+{% bootstrapNavbarItemDropdownItem "/services/sysadmin" -%}
+{% bootstrapNavbarItemDropdownItem "/services/networking" -%}
+{% bootstrapNavbarItemDropdownItem "/services/misc" -%}
+{% endbootstrapNavbarItemDropdown -%}
+{% bootstrapNavbarItem "/contact" -%}
+{% bootstrapNavbarItem "/contact" "Contact 2" -%}
+{% endbootstrapNavbarNav -%}
+{% endbootstrapNavbar -%}
 </header>

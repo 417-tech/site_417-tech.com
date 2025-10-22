@@ -11,3 +11,6 @@
 
 !src/
 !src/**
+
+!shortcodes/
+!shortcodes/*.js

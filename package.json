@@ -1,15 +1,14 @@
 {
-  "name": "site_417-tech.com",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-  },
-  "keywords": [],
-  "author": "417 Tech <dev@417-tech.com",
-  "license": "MIT",
-  "type": "module",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "sass": "^1.93.2"
-  }
+	"name": "site_417-tech.com",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {},
+	"keywords": [],
+	"author": "417 Tech <dev@417-tech.com",
+	"license": "MIT",
+	"type": "module",
+	"dependencies": {
+		"@11ty/eleventy": "^3.1.2",
+		"sass": "^1.93.2"
+	}
 }

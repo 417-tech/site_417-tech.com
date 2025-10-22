@@ -1,5 +1,6 @@
 import { I18nPlugin } from "@11ty/eleventy";
 import * as sass from "sass";
+import * as bootstrapNavbar from "./shortcodes/bootstrapNavbar.js";
 
 const configI18n = {
 	defaultLanguage: "en",
@@ -39,6 +40,35 @@ export default async function (eleventyConfig) {
 		useLayouts: false,
 		compile: compileScss,
 	});
+
+	eleventyConfig.addPairedShortcode(
+		"bootstrapNavbar",
+		bootstrapNavbar.bootstrapNavbar
+	);
+	eleventyConfig.addShortcode(
+		"bootstrapNavbarBrand",
+		bootstrapNavbar.bootstrapNavbarBrand
+	);
+	eleventyConfig.addShortcode(
+		"bootstrapNavbarToggler",
+		bootstrapNavbar.bootstrapNavbarToggler
+	);
+	eleventyConfig.addPairedShortcode(
+		"bootstrapNavbarNav",
+		bootstrapNavbar.bootstrapNavbarNav
+	);
+	eleventyConfig.addShortcode(
+		"bootstrapNavbarItem",
+		bootstrapNavbar.bootstrapNavbarItem
+	);
+	eleventyConfig.addPairedShortcode(
+		"bootstrapNavbarItemDropdown",
+		bootstrapNavbar.bootstrapNavbarItemDropdown
+	);
+	eleventyConfig.addShortcode(
+		"bootstrapNavbarItemDropdownItem",
+		bootstrapNavbar.bootstrapNavbarItemDropdownItem
+	);
 
 	// TODO: Look into SCSS storage so they're not passthrough copied to the site
 	eleventyConfig.addPassthroughCopy(`${config.dir.input}/assets`);
