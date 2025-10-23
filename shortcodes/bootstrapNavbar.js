@@ -159,8 +159,10 @@ export async function bootstrapNavbarItemDropdownItem(
 
 	let itemPage = collections.find((obj) => {
 		return (
+			obj.fileSlug == itemSlug ||
 			obj.filePathStem == itemSlug ||
-			obj.filePathStem == `${itemSlug}/index`
+			obj.filePathStem == `${itemSlug}/index` ||
+			obj.url == itemSlug
 		);
 	});
 	if (itemPage) {

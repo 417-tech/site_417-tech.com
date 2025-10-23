@@ -33,6 +33,11 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(I18nPlugin, configI18n);
 
+	eleventyConfig.addFilter("sortBy", (values, key) => {
+		let vals = [...values];
+		return vals.sort((a, b) => Math.sign(a.data[key] - b.data[key]));
+	});
+
 	// TODO: Look into a better way to handle this re: includes
 	eleventyConfig.addTemplateFormats("scss");
 	eleventyConfig.addExtension("scss", {
@@ -73,7 +78,7 @@ export default async function (eleventyConfig) {
 	// TODO: Look into SCSS storage so they're not passthrough copied to the site
 	eleventyConfig.addPassthroughCopy(`${config.dir.input}/assets`);
 	// Passthrough copy any referenced assets within the HTML-output content
-	eleventyConfig.addPassthroughCopy(`${config.dir.input}/**`, {
-		mode: "html-relative",
-	});
+	// eleventyConfig.addPassthroughCopy(`${config.dir.input}/**`, {
+	// 	mode: "html-relative",
+	// });
 }

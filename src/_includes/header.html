@@ -1,14 +1,12 @@
 <header>
 {% bootstrapNavbar "md" -%}
-{% bootstrapNavbarBrand site.title -%}
+{% bootstrapNavbarBrand site.title "/assets/img/logo-default-long.svg" -%}
 {% bootstrapNavbarToggler "header-navbar" -%}
 {% bootstrapNavbarNav "header-navbar" -%}
 {% bootstrapNavbarItemDropdown "/services" -%}
-{% bootstrapNavbarItemDropdownItem "/services/consultation" -%}
-{% bootstrapNavbarItemDropdownItem "/services/development" -%}
-{% bootstrapNavbarItemDropdownItem "/services/sysadmin" -%}
-{% bootstrapNavbarItemDropdownItem "/services/networking" -%}
-{% bootstrapNavbarItemDropdownItem "/services/misc" -%}
+{% for service in collections.service -%}
+{% bootstrapNavbarItemDropdownItem service.url -%}
+{% endfor -%}
 {% endbootstrapNavbarItemDropdown -%}
 {% bootstrapNavbarItem "/contact" -%}
 {% bootstrapNavbarItem "/contact" "Contact 2" -%}
