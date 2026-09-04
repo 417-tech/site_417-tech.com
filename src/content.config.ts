@@ -29,7 +29,7 @@ const services = defineCollection({
 const legal = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/legal" }),
   schema: z.object({
-    policy: z.enum(["privacy", "ai-usage", "data-retention", "terms", "terms-website-use"]),
+    policy: z.enum(["terms-website-use", "privacy", "ai-usage", "data-retention", "terms"]),
     label: z.string(),
     title: z.string(),
     version: z.string(),

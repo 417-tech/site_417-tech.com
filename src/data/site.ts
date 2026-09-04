@@ -11,4 +11,4 @@ export const site = {
   repo: "https://github.com/417-tech/site_417-tech.com",
 };
 
-export const legalOrder = ["privacy", "data-retention", "terms", "ai-usage"];
+export const legalOrder = ["terms-website-use", "privacy", "data-retention", "terms", "ai-usage"];
