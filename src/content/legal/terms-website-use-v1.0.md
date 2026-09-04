@@ -11,9 +11,9 @@ current: true
 
 ## Version History
 
-| Version | Date       | Summary         |
-| ------- | ---------- | --------------- |
-| v1.0    | 2026-09-04 | Initial version |
+- `v1.0`
+    - Date: 2026-09-04
+    - Summary: Initial version
 
 ### Version Explanation
 
