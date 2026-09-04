@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './Logo.astro';
+import { site, legalOrder } from '../data/site';
+import { getCollection } from 'astro:content';
+
+// Footer legal links, ordered, current version of each policy.
+const legalDocs = await getCollection('legal');
+const byPolicy = legalOrder.map((p) => {
+  const current = legalDocs.find((d) => d.data.policy === p && d.data.current);
+  return current ? { policy: p, label: current.data.label } : null;
+}).filter(Boolean) as { policy: string; label: string }[];
+
+---
+
+<!-- Footer -->
+  <footer class="border-t-[1.5px] border-line-strong py-10 px-[8vw] max-w-360 mx-auto flex flex-col gap-5 mt-12">
+    <div class="flex justify-between items-center flex-wrap gap-4">
+      <Logo height={22} width={129} />
+      <span class="font-body font-light text-[15px] text-muted">{site.location}</span>
+    </div>
+    <p class="font-body font-light text-caption text-muted">
+      Company number <a class="underline" href={site.companiesHouseUrl} target="_blank" rel="noopener">{site.companyNumber}</a>.
+    </p>
+    <div class="grid grid-cols-1 gap-3 items-start sm:grid-cols-2 sm:gap-x-6 md:flex md:flex-wrap md:items-center">
+      {byPolicy.map((l) => (
+        <a class="idx-link font-body font-light text-[15px] text-muted" href={`/legal/${l.policy}`}>{l.label}</a>
+      ))}
+      <a class="idx-link font-body font-light text-[15px] text-muted" href="/credits">Image credits</a>
+      <a class="idx-link font-body font-light text-[15px] text-muted" href="/sitemap">Sitemap</a>
+      <a class="idx-link inline-flex items-center gap-1.5 font-body font-light text-[15px] text-muted" href={site.repo} aria-label="Source on GitHub">
+        <Icon name="lucide:github" width={16} height={16} aria-hidden="true" />
+        Source
+      </a>
+    </div>
+  </footer>

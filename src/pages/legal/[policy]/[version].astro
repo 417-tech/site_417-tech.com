@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+import Base from '../../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+// Stable, dated URL for every archived policy version — e.g. /legal/privacy/v0.9
+export async function getStaticPaths() {
+  const docs = await getCollection('legal');
+  return docs.map((doc) => ({
+    params: { policy: doc.data.policy, version: doc.data.version },
+    props: { doc },
+  }));
+}
+const { doc } = Astro.props;
+const d = doc.data;
+const { Content } = await render(doc);
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+---
+<Base
+  title={`${d.title} ${d.version}`}
+  description={`Archived copy of 417 Tech's ${d.title} ${d.version}, published ${fmt(d.date)}.`}
+  canonical={new URL(`/legal/${d.policy}/`, Astro.site).href}
+>
+  <section class="pb-24">
+    <a class="idx-link inline-flex items-center gap-1.5 font-display font-bold text-[15px] text-secondary mb-8" href={`/legal/${d.policy}`}>
+      <Icon name="lucide:arrow-left" class="size-[1em]" /> Current version
+    </a>
+    <div class="font-display font-normal text-small tracking-caption uppercase text-secondary mb-6">Legal / {d.label} / Archived</div>
+    <h1 class="font-display font-bold text-[clamp(28px,4vw,44px)] leading-tight mb-3 max-w-[24ch]">{d.title}</h1>
+    <div class="font-sub italic text-small text-muted mb-12">{d.version} — published {fmt(d.date)}{d.current ? ' (current)' : ' (archived)'}</div>
+    <div class="legal-prose max-w-[70ch]">
+      <Content />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+
+const credits = (await getCollection('credits')).sort((a, b) => a.data.order - b.data.order);
+---
+{credits.map(({ id, data: c }) => (
+	<div id={id} class="flex flex-col gap-1.5 py-5 border-b-[1.5px] border-line target:bg-surface scroll-mt-24 md:grid md:grid-cols-[1fr_1fr_auto_auto] md:gap-5 md:items-center">
+		<span class="font-body font-light text-body text-primary">{c.location}</span>
+		{c.creator
+			? <span class="font-body font-light text-small md:text-body text-secondary">
+					<span class="md:hidden text-muted">Creator / source — </span>{c.creator === c.source ? c.creator : `${c.creator} — ${c.source}`}
+				</span>
+			: <span class="hidden md:inline"></span>}
+		<div class="flex items-center gap-4 md:contents">
+			{c.link
+				? <a class="idx-link inline-flex items-center gap-1.5 font-body font-light text-small md:text-body text-secondary" href={c.link} target="_blank" rel="noopener noreferrer">
+						View original <Icon name="lucide:arrow-right" class="size-[1em]" />
+					</a>
+				: <span class="hidden md:inline"></span>}
+			{c.pending && (
+				<span class="font-display font-bold text-caption tracking-caption uppercase text-primary bg-orchid-dark px-2.5 py-0.75 rounded-full whitespace-nowrap">Not yet sourced</span>
+			)}
+		</div>
+	</div>
+))}

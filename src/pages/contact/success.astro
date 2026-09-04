@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components';
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Message sent" active="contact" description="Your message to 417 Tech has been sent. We'll get back to you as soon as we can.">
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Contact</div>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-7 max-w-[22ch]">Thanks — your message is on its way.</h1>
+    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-12">We've received your message and will get back to you as soon as we can. If it's urgent, you can also reach us directly by email or phone.</p>
+    <div class="flex gap-8 flex-wrap">
+      <a class="idx-link inline-flex items-center gap-3" href="/">
+        <span class="font-display font-bold text-body text-primary">Back to home</span>
+        <Icon name="lucide:arrow-right" class="size-[1em] text-(--accent)" />
+      </a>
+      <a class="idx-link inline-flex items-center gap-3" href="/contact">
+        <span class="font-display font-bold text-body text-primary">Back to contact</span>
+        <Icon name="lucide:arrow-right" class="size-[1em] text-(--accent)" />
+      </a>
+    </div>
+  </section>
+</Base>

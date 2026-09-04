@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './Logo.astro';
+import { navItems } from '../data/navItems';
+
+interface Props { active?: 'home' | 'services' | 'contact' }
+const { active } = Astro.props;
+---
+<header class="fixed top-0 left-0 right-0 z-50 bg-page">
+  <div class="max-w-360 mx-auto flex justify-between items-center px-8 py-6">
+    <a href="/" class="flex items-center gap-2.5" aria-label="417 Tech home"><Logo height={34} width={199} /></a>
+    <nav class="hidden md:flex gap-9 items-center font-display font-bold text-[15px] tracking-caption uppercase">
+      {navItems.map((n) => (
+        <a class:list={["idx-link text-primary", { active: active === n.key }]} href={n.href}>{n.label}</a>
+      ))}
+    </nav>
+    <details class="mobile-nav md:hidden relative">
+      <summary class="list-none cursor-pointer flex items-center justify-center w-8 h-8 [&::-webkit-details-marker]:hidden" aria-label="Menu">
+        <Icon name="lucide:menu" width={20} height={20} aria-hidden="true" />
+      </summary>
+      <nav class="absolute right-0 top-full mt-3 flex flex-col gap-1 bg-surface border-[1.5px] border-line rounded-lg p-4 min-w-40 font-display font-bold text-[15px] tracking-caption uppercase">
+        {navItems.map((n) => (
+          <a class:list={["idx-link text-primary py-1.5", { active: active === n.key }]} href={n.href}>{n.label}</a>
+        ))}
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script src="/scripts/mobile-nav.js" is:inline></script>

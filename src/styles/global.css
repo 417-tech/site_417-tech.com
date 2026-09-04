@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* ---- Poppins (brand typeface) ---- */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/poppins-light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/poppins-light-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/poppins-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/poppins-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/poppins-bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/poppins-bold-italic.woff2") format("woff2");
+}
+
+/* ---- design tokens as Tailwind theme (generates the utilities used across the site) ---- */
+@theme {
+  /* brand palette (exact hex from the brand guide) */
+  --color-orchid: #ba68c8;
+  /* darkened brand purple for AAA button/badge fills (white text = 9.8:1) */
+  --color-orchid-dark: #5d3464;
+  --color-forest: #004d3e;
+  --color-blue: #0d47a1;
+  --color-sage: #81a685;
+  --color-grey: #d6d6d6;
+  --color-ink: #161616;
+
+  /* dark-theme semantic surfaces + text */
+  --color-page: #161616;
+  --color-surface: #202020;
+  --color-sunken: #101010;
+  --color-primary: #ffffff;
+  --color-secondary: rgba(255, 255, 255, 0.68);
+  /* muted lifted from .42 to .62 so de-emphasised text still clears WCAG AAA (7:1) on the dark bg */
+  --color-muted: rgba(255, 255, 255, 0.62);
+  --color-line: rgba(255, 255, 255, 0.16);
+  --color-line-strong: #ffffff;
+
+  /* Poppins in three roles (all the same family; weight/style differ) */
+  --font-display: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-sub: "Poppins", sans-serif;
+
+  /* type scale */
+  --text-caption: 12px;
+  --text-small: 14px;
+  --text-body: 16px;
+  --text-body-lg: 20px;
+  --text-sub: 21px;
+  --text-heading: 22px;
+
+  --tracking-caption: 0.06em;
+  --tracking-display: -0.01em;
+
+  --leading-tight: 1.1;
+  --leading-heading: 1.25;
+  --leading-body: 1.6;
+}
+
+/* accent — used for accent-coloured TEXT (eyebrows, numbers, links). Lightened from the
+   brand #ba68c8 to #cb92d8 so text clears WCAG AAA (7:1) on the dark background; the raw
+   brand #ba68c8 only reaches AA (5.1:1) there. Brand fills (logo, buttons, badges) keep the
+   exact brand purple via the `orchid` theme colour — they're graphics, so AA/3:1 is enough. */
+:root {
+  --accent: #cb92d8;
+}
+
+@layer base {
+  body {
+    background: var(--color-page);
+    color: var(--color-primary);
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-primary);
+  }
+  /* form placeholders — explicit AAA-contrast colour (UA defaults are often too faint) */
+  ::placeholder {
+    color: var(--color-secondary);
+    opacity: 1;
+  }
+}
+
+/* rendered-Markdown (policy body) styling — the generated HTML has no class hooks,
+   so it's styled once here via @apply rather than repeated inline. */
+@layer components {
+  .legal-prose h2 {
+    @apply font-display font-bold text-[28px] mt-10 mb-3.5 text-primary;
+  }
+  .legal-prose h3 {
+    @apply font-display font-bold text-[17px] tracking-caption uppercase mb-3 text-primary;
+  }
+  .legal-prose p {
+    @apply font-body font-light text-body leading-body text-secondary mb-5;
+  }
+  .legal-prose ul {
+    @apply font-body font-light text-body leading-body text-secondary mb-5 pl-5.5 list-disc;
+  }
+  .legal-prose li {
+    @apply mb-1.5;
+  }
+  .legal-prose blockquote {
+    @apply border-l-2 border-(--accent) pl-4 text-muted italic mb-5;
+  }
+  .legal-prose a {
+    @apply underline;
+  }
+}
+
+/* animated underline on nav + interactive rows (a Tailwind custom utility) */
+@utility idx-link {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 0;
+    background: currentColor;
+    transition: width 240ms ease;
+  }
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
+}

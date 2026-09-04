@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Services" active="services" description="Consultation, software development, systems administration, network engineering and miscellaneous technical work from 417 Tech.">
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Services</div>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-7 max-w-[22ch]">Five areas, one point of contact.</h1>
+    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-16">We group our work into five service areas. Each follows the same process: scoping, a fixed proposal, delivery and support. Choose an area below for details.</p>
+
+    <div class="border-t-[1.5px] border-line-strong">
+      {services.map((s) => (
+        <a class="idx-link flex gap-6 py-7 border-b-[1.5px] border-line" href={`/services/${s.id}`}>
+          <span class="w-1 shrink-0 self-stretch bg-orchid rounded-full"></span>
+          <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-x-6 gap-y-2 md:gap-y-1.5 items-baseline flex-1">
+            <div class="col-start-1 row-start-1 font-display font-bold text-[clamp(20px,2.6vw,28px)] text-primary">{s.data.title}</div>
+            <div class="col-start-1 row-start-2 font-body font-light text-body text-secondary max-w-[52ch]">{s.data.oneLiner}</div>
+            <span class="col-start-1 row-start-3 md:col-start-2 md:row-start-1 inline-flex items-center gap-1.5 font-display font-bold text-small text-primary whitespace-nowrap">
+              View service <Icon name="lucide:arrow-right" class="size-[1em]" />
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

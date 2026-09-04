@@ -1,0 +1,17 @@
+---
+import ContactDetails from '../components/Contact/ContactDetails.astro';
+import ContactForm from '../components/Contact/ContactForm.astro';
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const [contact] = await getCollection('contact');
+---
+<Base title="Contact" active="contact" description="Get in touch with 417 Tech to discuss consultation, software development, systems administration or network engineering work.">
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">{contact.data.eyebrow}</div>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-14 max-w-[20ch]">{contact.data.heading}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <ContactForm />
+      <ContactDetails />
+    </div>
+  </section>
+</Base>

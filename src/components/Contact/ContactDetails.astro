@@ -1,0 +1,22 @@
+---
+import { site } from '../../data/site';
+
+// tel: link — strip spaces, the (0) trunk prefix and formatting to an E.164-style number.
+const telHref = 'tel:' + site.phone.replace(/\(0\)/, '').replace(/[^\d+]/g, '');
+
+const details = [
+  { label: 'Email', value: site.email, href: `mailto:${site.email}` },
+  { label: 'Phone', value: site.phone, href: telHref },
+  { label: 'Post', value: site.post, href: null },
+];
+---
+<div class="border-l-[1.5px] border-line-strong pl-8 flex flex-col gap-7">
+	{details.map((d) => (
+		<div>
+			<div class="font-display font-bold text-[15px] tracking-caption uppercase mb-2 text-primary">{d.label}</div>
+			{d.href
+				? <a class="idx-link inline-block text-body text-secondary" href={d.href}>{d.value}</a>
+				: <p class="text-body text-secondary">{d.value}</p>}
+		</div>
+	))}
+</div>

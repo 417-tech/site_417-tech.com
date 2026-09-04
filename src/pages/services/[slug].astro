@@ -1,0 +1,61 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import { Icon } from 'astro-icon/components';
+import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((s) => ({ params: { slug: s.id }, props: { s } }));
+}
+const { s } = Astro.props as InferGetStaticPropsType<typeof getStaticPaths>;
+const d = s.data;
+const credits = await getCollection('credits');
+---
+<Base title={d.title} description={d.oneLiner} active="services">
+  <section class="pb-24">
+    <a class="idx-link inline-flex items-center gap-1.5 font-display font-bold text-[15px] text-secondary mb-8" href="/services">
+      <Icon name="lucide:arrow-left" class="size-[1em]" /> All services
+    </a>
+    <div class="font-display font-normal text-small tracking-caption uppercase  mb-6  text-(--accent)">{d.eyebrow}</div>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-7 max-w-[24ch]">{d.title}</h1>
+    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-16">{d.summary}</p>
+
+    <div class="border-t-[1.5px] border-line-strong">
+      {d.subsections.map((sub, i) => (
+        <div class="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-12 py-12 border-b-[1.5px] border-line md:items-start">
+          <div class="order-2 md:order-1">
+            <div class="flex items-center gap-3 mb-3.5">
+              <h2 class="font-display font-bold text-[clamp(24px,3.2vw,32px)] text-primary">{sub.title}</h2>
+              {sub.upcoming && (
+                <span class="font-display font-bold text-caption tracking-caption uppercase text-primary bg-orchid-dark px-2.5 py-0.75 rounded-full">Coming soon</span>
+              )}
+            </div>
+            <p class="font-body font-light text-body leading-body text-secondary">{sub.body}</p>
+          </div>
+          {sub.img && (
+            <div class="order-1 md:order-2">
+              {sub.img.format === 'svg'
+                ? <img src={sub.img.src} alt={sub.title} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : 'auto'} class="w-full h-50 object-contain block rounded-lg bg-surface" />
+                : <Image src={sub.img} alt={sub.title} widths={[400, 720, 1000]} sizes="(max-width:860px) 90vw, 45vw" loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : 'auto'} class="w-full h-50 object-cover block rounded-lg bg-surface" />
+              }
+              {sub.source && (
+                <a class="idx-link inline-block font-body font-light text-caption text-muted mt-2" href={`/credits#${sub.source}`}>
+                  Image credit: {credits.find((c) => c.id === sub.source)?.data.creator}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <p class="font-sub italic text-sub text-(--accent) max-w-[56ch] mt-14 mb-12">{d.closing}</p>
+
+    <a class="idx-link inline-flex items-center gap-3" href="/contact">
+      <span class="font-display font-bold text-body text-primary">Discuss this with us</span>
+      <Icon name="lucide:arrow-right" class="size-[1em] text-(--accent)" />
+    </a>
+  </section>
+</Base>

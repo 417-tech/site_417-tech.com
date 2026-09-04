@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../data/site';
+import HomeServices from '../components/Home/HomeServices.astro';
+
+const [home] = await getCollection('home');
+---
+<Base active="home" description={home.data.intro}>
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase  text-(--accent) mb-6">{site.name} / {site.location}</div>
+    <h1 class="font-display font-bold text-[clamp(40px,7vw,92px)] leading-tight tracking-display mb-8 max-w-[20ch]">{home.data.heading}</h1>
+    <p class="font-sub italic text-sub max-w-[68ch] text-secondary mb-18 leading-heading">{home.data.intro}</p>
+
+    <HomeServices />
+
+    <a class="idx-link inline-flex items-center gap-3" href="/contact">
+      <span class="font-display font-bold text-heading text-primary">{home.data.cta}</span>
+      <Icon name="lucide:arrow-right" class="size-[1em] text-(--accent)" />
+    </a>
+  </section>
+</Base>

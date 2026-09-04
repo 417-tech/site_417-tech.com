@@ -1,0 +1,17 @@
+---
+import CreditsList from '../components/Credits/CreditsList.astro';
+import Base from '../layouts/Base.astro';
+---
+<Base title="Image credits" description="Photography and illustration credits for images used across the 417 Tech website.">
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Credits</div>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-6 max-w-[22ch]">Image credits.</h1>
+    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-14">Photography and illustrations used on this site are credited here. Where an image comes from a stock library such as Unsplash or Freepik, the creator and a link to the original are listed against that image.</p>
+    <div class="border-t-[1.5px] border-line-strong">
+      <div class="hidden md:grid md:grid-cols-[1fr_1fr_auto_auto] gap-5 py-3 border-b-[1.5px] border-line-strong font-display font-bold text-caption tracking-caption uppercase text-muted">
+        <span>Location on site</span><span>Creator / source</span><span>Link</span><span></span>
+      </div>
+      <CreditsList />
+    </div>
+  </section>
+</Base>

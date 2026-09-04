@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import HomeService from './HomeService.astro';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border-t border-l border-line mb-16">
+  {services.map((s) => <HomeService s={s} />)}
+</div>

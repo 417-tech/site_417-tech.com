@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { legalOrder } from '../data/site';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+
+const legalDocs = await getCollection('legal');
+const legalByPolicy = legalOrder.map((policy) => {
+  const versions = legalDocs
+    .filter((d) => d.data.policy === policy)
+    .sort((a, b) => b.data.date.localeCompare(a.data.date));
+  const current = versions.find((v) => v.data.current) ?? versions[0];
+  return { policy, label: current.data.label, current, versions };
+});
+---
+<Base title="Sitemap" description="Every page on the 417 Tech website, including services and legal documents.">
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Sitemap</div>
+    <h1 class="font-display font-bold text-[clamp(28px,4vw,44px)] leading-tight mb-12 max-w-[24ch]">Every page on this site.</h1>
+
+    <div class="border-t-[1.5px] border-line-strong">
+      <div class="py-8 border-b-[1.5px] border-line">
+        <h2 class="font-display font-bold text-[13px] tracking-caption uppercase text-muted mb-4">General</h2>
+        <ul class="flex flex-col gap-2">
+          <li><a class="idx-link font-body font-light text-[15px]" href="/">Home</a></li>
+          <li><a class="idx-link font-body font-light text-[15px]" href="/contact">Contact</a></li>
+          <li><a class="idx-link font-body font-light text-[15px]" href="/credits">Image credits</a></li>
+        </ul>
+      </div>
+
+      <div class="py-8 border-b-[1.5px] border-line">
+        <h2 class="font-display font-bold text-[13px] tracking-caption uppercase text-muted mb-4">Services</h2>
+        <ul class="flex flex-col gap-2">
+          <li><a class="idx-link font-body font-light text-[15px]" href="/services">All services</a></li>
+          {services.map((s) => (
+            <li><a class="idx-link font-body font-light text-[15px]" href={`/services/${s.id}`}>{s.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="py-8 border-b-[1.5px] border-line">
+        <h2 class="font-display font-bold text-[13px] tracking-caption uppercase text-muted mb-4">Legal</h2>
+        <ul class="flex flex-col gap-3">
+          {legalByPolicy.map(({ policy, label, current, versions }) => (
+            <li>
+              <a class="idx-link font-body font-light text-[15px]" href={`/legal/${policy}`}>{label}</a>
+              {versions.length > 1 && (
+                <span class="ml-2 font-body font-light text-caption text-muted">
+                  {versions.map((v, i) => (
+                    <>
+                      {i > 0 && ', '}
+                      <a class="underline" href={`/legal/${policy}/${v.data.version}`}>{v.data.version}{v.id === current.id ? ' (current)' : ''}</a>
+                    </>
+                  ))}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

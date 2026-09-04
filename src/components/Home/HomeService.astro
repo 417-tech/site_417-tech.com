@@ -1,0 +1,11 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { s: CollectionEntry<'services'> }
+const { s } = Astro.props;
+---
+<a class="idx-link bg-page border-r border-b border-line px-7 py-8 flex flex-col gap-4" href={`/services/${s.id}`}>
+	<span class="block h-1 w-8 bg-orchid rounded-full"></span>
+	<span class="font-display font-bold text-heading leading-[1.2] text-primary sm:min-h-[2lh]">{s.data.title}</span>
+	<span class="font-body font-light text-small text-secondary leading-body">{s.data.oneLiner}</span>
+</a>
