@@ -11,4 +11,5 @@ export const site = {
   repo: "https://github.com/417-tech/site_417-tech.com",
 };
 
-export const legalOrder = ["terms-website-use", "privacy", "data-retention", "terms", "ai-usage"];
+// TODO: Restore terms-service to legalOrder
+export const legalOrder = ["terms-website-use", "privacy", "data-processing", "ai-usage"];
