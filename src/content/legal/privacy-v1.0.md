@@ -7,11 +7,58 @@ date: "2026-02-26"
 current: true
 ---
 
-## Contact details
+## Version History
 
-Phone: +44 (0) 333 44 44 417
+- `v1.0`
+	- Date: 2026-02-26
+	- Summary: Initial version, generated on the ICO website and adjusted
 
-Email: contact (at) 417-tech.com
+### Version Explanation
+
+Document versions are identified using the format `v{major}.{minor}`. Full version history of the document is available by selecting a different version above.
+
+#### Major Version
+
+The major version number will be incremented where there is a significant or substantive change to the document. This includes, but is not limited to:
+
+- The addition or removal of a clause.
+- A change to the substance or requirements of a clause resulting from an updated process, regulation, or other material change.
+
+A new major version will also reset the minor version to 0.
+
+#### Minor Version
+
+The minor version number will be incremented where changes are made to improve the clarity, readability or understanding of the document without changing its substantive meaning or scope. This includes, but is not limited to:
+
+- Rewording a clause to clarify what it applies to or how it applies.
+- Adding examples to further explain the application or interpretation of a clause.
+- Making other editorial or explanatory changes that do not alter the substantive requirements of the document.
+
+### Acceptance
+
+Acceptance of a document is based on the major version number and is tied to the applicable contract or Statement of Work ("SoW").
+
+A minor version update made during an active contract or SoW will automatically apply and does not require additional acceptance, provided that the changes do not alter the substantive scope or requirements of the document.
+
+A new major version will require acceptance under any subsequent contract or SoW. An existing contract or SoW will continue to be governed by the major version accepted at the time of agreement, unless otherwise agreed by the parties.
+
+Accordingly, minor version updates may be made during the term of an active contract or SoW without requiring re-acceptance. A new major version will require acceptance as part of any subsequent contract or SoW.
+
+## Who
+
+417 Tech Ltd ("we", "us", "our") is a company registered in England and Wales under company number [17118754](https://find-and-update.company-information.service.gov.uk/company/17118754), with registered office at:
+
+417 Tech Ltd
+Sparkhouse
+Rope Walk
+Lincoln
+England
+LN6 7DQ
+
+You can contact us by post at the above address, or by any of the following other contact methods:
+
+Phone: [+44 (0) 333 44 44 417](tel:+443334444417)
+Email: [contact (at) 417-tech (dot) com](mailto:contact@417-tech.com)
 
 ## Information we collect
 
@@ -25,7 +72,7 @@ We collect or use the following personal information as part of staff recruitmen
 - Next of kin or emergency contact details
 - Performance records (eg reviews, disciplinary records, complaints or disciplinary action)
 
-### Salaries and pensions
+#### Salaries and pensions
 
 We collect or use the following personal information as part of managing salaries and pensions:
 
@@ -51,23 +98,48 @@ We collect or use the following information to provide and improve products and 
 - Audio recordings (eg calls)
 - Records of meetings and decisions
 
-## Lawful basis
+## Lawful Bases
 
-Under UK data protection law, we must have a "lawful basis" for collecting and using your personal information. There is a list of possible lawful bases in the UK GDPR. You can find out more about lawful bases on the ICO's website (ico.org.uk).
+Under UK data protection law, we must have a “lawful basis” for collecting and using your personal information. There is a list of possible [lawful bases](https://ico.org.uk/for-organisations/advice-for-small-organisations/getting-started-with-gdpr/data-protection-principles-definitions-and-key-terms/#lawfulbasis) in the UK GDPR. You can find out more about lawful bases on the ICO's website.
 
-Which lawful basis we rely on may affect your data protection rights, set out below. You can find out more about your data protection rights and the exemptions which may apply on the ICO's website.
+Which lawful basis we rely on may affect your data protection rights which are set out in brief below. You can find out more about your data protection rights and the exemptions which may apply on the ICO's website:
 
-- Your right of access — you have the right to ask us for copies of your personal information, and other information such as where we get it from and who we share it with. Some exemptions may apply.
-- Your right to rectification — you have the right to ask us to correct or delete personal information you think is inaccurate or incomplete.
-- Your right to erasure — you have the right to ask us to delete your personal information.
-- Your right to restriction of processing — you have the right to ask us to limit how we use your personal information.
-- Your right to object to processing — you have the right to object to the processing of your personal data.
-- Your right to data portability — you have the right to ask that we transfer the personal information you gave us to another organisation, or to you.
-- Your right to withdraw consent — when we use consent as our lawful basis, you have the right to withdraw your consent at any time.
+- Your right of access - You have the right to ask us for copies of your personal information. You can request other information such as details about where we get personal information from and who we share personal information with. There are some exemptions which means you may not receive all the information you ask for. [Read more about the right of access](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#roa).
+
+- Your right to rectification - You have the right to ask us to correct or delete personal information you think is inaccurate or incomplete. [Read more about the right to rectification](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#rtr).
+
+- Your right to erasure - You have the right to ask us to delete your personal information. [Read more about the right to erasure](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#rte).
+
+- Your right to restriction of processing - You have the right to ask us to limit how we can use your personal information. [Read more about the right to restriction of processing](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#rtrop).
+
+- Your right to object to processing - You have the right to object to the processing of your personal data. [Read more about the right to object to processing](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#rto).
+
+- Your right to data portability - You have the right to ask that we transfer the personal information you gave us to another organisation, or to you. [Read more about the right to data portability](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#rtdp).
+
+- Your right to withdraw consent – When we use consent as our lawful basis you have the right to withdraw your consent at any time. [Read more about the right to withdraw consent](https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/create-your-own-privacy-notice/your-data-protection-rights/#rtwc).
 
 If you make a request, we must respond to you without undue delay and in any event within one month.
 
 To make a data protection rights request, please contact us using the contact details at the top of this privacy notice.
+
+### Staff
+
+Our lawful bases for collecting or using personal information as part of staff recruitment, administration and management are:
+
+- Consent - we have permission from you after we gave you all the relevant information. All of your data protection rights may apply, except the right to object. To be clear, you do have the right to withdraw your consent at any time.
+- Contract – we have to collect or use the information so we can enter into or carry out a contract with you. All of your data protection rights may apply except the right to object.
+
+Our lawful bases for collecting or using personal information as part of managing salaries and pensions are:
+
+- Consent - we have permission from you after we gave you all the relevant information. All of your data protection rights may apply, except the right to object. To be clear, you do have the right to withdraw your consent at any time.
+- Contract – we have to collect or use the information so we can enter into or carry out a contract with you. All of your data protection rights may apply except the right to object.
+
+### Customers
+
+Our lawful bases for collecting or using personal information to provide and improve products and services for clients are:
+
+- Consent - we have permission from you after we gave you all the relevant information. All of your data protection rights may apply, except the right to object. To be clear, you do have the right to withdraw your consent at any time.
+- Contract – we have to collect or use the information so we can enter into or carry out a contract with you. All of your data protection rights may apply except the right to object.
 
 ## Where we get personal data from
 
@@ -81,17 +153,21 @@ We may get your personal data directly from you, or in the event that you are pa
 
 ## How long we keep information
 
-Our data retention policy is available from https://417-tech.com/legal/data-retention
+Our data processing policy is available from https://417-tech.com/legal/data-processing, which includes information on data retention.
 
 ## Complaints
 
-If you have any concerns about our use of your personal data, you can make a complaint to us using the contact details at the top of this privacy notice.
+You may use the standard contact details from above to discuss this policy. In order to keep this document generic, our Data Protection Officer is not named, however they can be also be contacted directly with the following details:
+
+Email: [dpo (at) 417-tech (dot) com](mailto:dpo@417-tech.com)
+
+Our ICO registration number is ZC200887.
 
 If you remain unhappy with how we've used your data after raising a complaint with us, you can also complain to the ICO.
 
-The ICO's address:
+The ICO's address:           
 
-Information Commissioner's Office  
+Information Commissioner's Office
 Wycliffe House  
 Water Lane  
 Wilmslow  
