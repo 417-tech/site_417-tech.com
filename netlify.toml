@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "24"
-  SITE_URL = "https://417-tech.netlify.app/"
+  SITE_URL = "https://417-tech.com"
 
 [[headers]]
   for = "/*"
