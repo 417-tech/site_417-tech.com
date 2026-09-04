@@ -7,8 +7,6 @@ date: "2026-09-04"
 current: true
 ---
 
-# Terms of Website Use
-
 ## Version History
 
 - `v1.0`
