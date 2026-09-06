@@ -32,8 +32,7 @@ const fmt = (iso: string) =>
   <section class="pb-24">
     <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Legal / {d.label}</div>
     <h1 class="font-display font-bold text-[clamp(28px,4vw,44px)] leading-tight mb-3 max-w-[24ch]">{d.title}</h1>
-    <div class:list={["font-sub italic text-small text-muted", d.summary ? "mb-3" : "mb-12"]}>{d.version} — published {fmt(d.date)}{d.current ? ' (current)' : ' (archived)'}</div>
-    {d.summary && <p class="font-body font-light text-body text-secondary mb-12 max-w-[60ch]">{d.summary}</p>}
+    <div class="font-sub italic text-small text-muted mb-4">{d.version} — published {fmt(d.date)}{d.current ? ' (current)' : ' (archived)'}</div>
     <VersionHistory policy={d.policy} versions={versions} activeId={doc.id} />
     <div class="legal-prose max-w-[70ch]">
       <Content />
