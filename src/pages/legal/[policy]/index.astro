@@ -3,13 +3,14 @@ import Base from '../../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import { legalOrder } from '../../../data/site';
 import ComingSoon from '../../../components/Policies/ComingSoon.astro';
+import VersionHistory from '../../../components/Policies/VersionHistory.astro';
 
 export async function getStaticPaths() {
   const docs = await getCollection('legal');
   return legalOrder.map((policy) => {
     const versions = docs
       .filter((d) => d.data.policy === policy)
-      .sort((a, b) => b.data.date.localeCompare(a.data.date));
+      .sort((a, b) => Number(b.data.current) - Number(a.data.current) || b.data.date.localeCompare(a.data.date));
     const current = versions.find((v) => v.data.current) ?? versions[0];
     return { params: { policy }, props: { current, versions } };
   });
@@ -24,18 +25,10 @@ const fmt = (iso: string) =>
   <section class="pb-24">
     <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Legal / {d.label}</div>
     <h1 class="font-display font-bold text-[clamp(28px,4vw,44px)] leading-tight mb-3 max-w-[24ch]">{d.title}</h1>
-    <div class="font-sub italic text-small text-muted mb-6">{d.version} — {fmt(d.date)}</div>
+    <div class:list={["font-sub italic text-small text-muted", d.summary ? "mb-3" : "mb-6"]}>{d.version} — {fmt(d.date)} (current)</div>
+    {d.summary && <p class="font-body font-light text-body text-secondary mb-6 max-w-[60ch]">{d.summary}</p>}
 
-    <div class="flex gap-5 flex-wrap items-center py-4 border-y-[1.5px] border-line mb-12">
-      <span class="font-display font-bold text-[13px] tracking-caption uppercase text-muted">Version history</span>
-      {versions.map((v) => (
-        v.id === current.id ? (
-          <span class="font-body font-light text-small text-(--accent)">{v.data.version} · {fmt(v.data.date)} (current)</span>
-        ) : (
-          <a class="font-body font-light text-small text-muted underline" href={`/legal/${d.policy}/${v.data.version}`}>{v.data.version} · {fmt(v.data.date)}</a>
-        )
-      ))}
-    </div>
+    <VersionHistory policy={d.policy} versions={versions} activeId={current.id} />
 
     {d.comingSoon && (
       <ComingSoon />

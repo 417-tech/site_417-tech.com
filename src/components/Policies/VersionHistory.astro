@@ -1,0 +1,40 @@
+---
+interface Props {
+  policy: string;
+  versions: Array<{ id: string; data: { version: string; date: string; current: boolean; summary?: string } }>;
+  activeId: string; // the doc being viewed on this page — rendered as plain text, not a link
+}
+const { policy, versions, activeId } = Astro.props;
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+---
+<div class="py-6 border-y-[1.5px] border-line mb-12">
+  <span class="font-display font-bold text-[13px] tracking-caption uppercase text-muted block mb-4">Version history</span>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="border-b-[1.5px] border-line">
+          <th class="font-display font-bold text-caption tracking-caption uppercase text-muted pb-2 pr-6 whitespace-nowrap">Version</th>
+          <th class="font-display font-bold text-caption tracking-caption uppercase text-muted pb-2 pr-6 whitespace-nowrap">Date</th>
+          <th class="font-display font-bold text-caption tracking-caption uppercase text-muted pb-2">Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        {versions.map((v) => (
+          <tr class="border-b border-line last:border-b-0">
+            <td class="py-2.5 pr-6 align-top whitespace-nowrap">
+              {v.id === activeId ? (
+                <span class="font-body font-normal text-small text-(--accent)">{v.data.version}*</span>
+              ) : (
+                <a class="font-body font-light text-small text-(--accent) hover:text-(--accent) hover:underline" href={`/legal/${policy}/${v.data.version}`}>{v.data.version}</a>
+              )}
+            </td>
+            <td class="py-2.5 pr-6 align-top whitespace-nowrap font-body font-light text-small text-muted">{fmt(v.data.date)}</td>
+            <td class="py-2.5 align-top font-body font-light text-small text-muted">{v.data.summary ?? '—'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="font-body font-light text-caption text-muted mt-3">* selected version</p>
+</div>

@@ -3,7 +3,7 @@ import tailwind from "@tailwindcss/vite";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 
-const site = process.env.SITE_URL || "https://417-tech.netlify.app/";
+const site = process.env.SITE_URL || "https://417-tech.com/";
 
 // Tailwind v4 via the Vite plugin — no separate integration/config file needed.
 // Default (sharp) image service — images live in src/assets and are optimised by <Image>.

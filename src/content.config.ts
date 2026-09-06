@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { legalLoader } from "./content/loaders/legal";
 
 // content lives as Markdown in these collections
 
@@ -27,13 +28,19 @@ const services = defineCollection({
 
 // One entry per PUBLISHED VERSION of a policy — prior versions stay reviewable.
 const legal = defineCollection({
-  loader: glob({ pattern: "*.md", base: "./src/content/legal" }),
+  loader: legalLoader(),
   schema: z.object({
-    policy: z.enum(["terms-website-use", "privacy", "data-processing", "ai-usage"]),
+    policy: z.enum([
+      "terms-website-use",
+      "privacy",
+      "data-processing",
+      "ai-usage",
+    ]),
     label: z.string(),
     title: z.string(),
     version: z.string(),
     date: z.string(), // ISO publication date
+    summary: z.string().optional(), // one-line "what changed" shown in the version history
     current: z.boolean().default(false),
     comingSoon: z.boolean().default(false),
   }),

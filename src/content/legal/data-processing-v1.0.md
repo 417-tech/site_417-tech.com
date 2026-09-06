@@ -5,18 +5,13 @@ title: Data Processing Policy
 version: v1.0
 date: "2026-09-04"
 current: true
+summary: Initial version
 comingSoon: true
 ---
 
-## Version History
+[[version]]
 
-- `v1.0`
-	- Date: 2026-09-04
-	- Summary: Initial version
-
-![[Version Description]]
-
-![[Who]]
+[[who]]
 
 ## What
 
@@ -37,23 +32,23 @@ Our ICO registration number is ZC200887.
 In line with the UK GDPRs data minimisation principle, we only collect the personal data reasonably necessary to form and perform a contract, meet legal obligations, and run the business. As a minimum operating baseline, this is limited to:
 
 - Client business contact details
-	- Name
-	- Job title
-	- Business email address
-	- Phone number
+  - Name
+  - Job title
+  - Business email address
+  - Phone number
 - Billing and account information:
-	- Company name
-	- Billing address
-	- VAT number
-	- Payment details (processed via a PCI-compliant payment provider, no details are stored by us)
+  - Company name
+  - Billing address
+  - VAT number
+  - Payment details (processed via a PCI-compliant payment provider, no details are stored by us)
 - Contract and engagement records
-	- Signed agreements
-	- Statements of work
-	- Correspondence needed to deliver the service
+  - Signed agreements
+  - Statements of work
+  - Correspondence needed to deliver the service
 - Communications reasonably necessary for service delivery and support (e.g. emails)
 - Where applicable:
-	- Employee / HR data limited to what is required for payroll
-	- Tax and employment law compliance
+  - Employee / HR data limited to what is required for payroll
+  - Tax and employment law compliance
 
 We do not collect special category data (e.g. health, biometric, or similarly sensitive data) about clients, and do not collect data from data subjects who are minors, unless a specific, documented business reason and lawful basis exists.
 

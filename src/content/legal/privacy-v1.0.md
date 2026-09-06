@@ -4,61 +4,13 @@ label: Privacy Policy
 title: Privacy Policy
 version: v1.0
 date: "2026-02-26"
+summary: Initial version, generated on the ICO website and adjusted
 current: true
 ---
 
-## Version History
+[[version]]
 
-- `v1.0`
-	- Date: 2026-02-26
-	- Summary: Initial version, generated on the ICO website and adjusted
-
-### Version Explanation
-
-Document versions are identified using the format `v{major}.{minor}`. Full version history of the document is available by selecting a different version above.
-
-#### Major Version
-
-The major version number will be incremented where there is a significant or substantive change to the document. This includes, but is not limited to:
-
-- The addition or removal of a clause.
-- A change to the substance or requirements of a clause resulting from an updated process, regulation, or other material change.
-
-A new major version will also reset the minor version to 0.
-
-#### Minor Version
-
-The minor version number will be incremented where changes are made to improve the clarity, readability or understanding of the document without changing its substantive meaning or scope. This includes, but is not limited to:
-
-- Rewording a clause to clarify what it applies to or how it applies.
-- Adding examples to further explain the application or interpretation of a clause.
-- Making other editorial or explanatory changes that do not alter the substantive requirements of the document.
-
-### Acceptance
-
-Acceptance of a document is based on the major version number and is tied to the applicable contract or Statement of Work ("SoW").
-
-A minor version update made during an active contract or SoW will automatically apply and does not require additional acceptance, provided that the changes do not alter the substantive scope or requirements of the document.
-
-A new major version will require acceptance under any subsequent contract or SoW. An existing contract or SoW will continue to be governed by the major version accepted at the time of agreement, unless otherwise agreed by the parties.
-
-Accordingly, minor version updates may be made during the term of an active contract or SoW without requiring re-acceptance. A new major version will require acceptance as part of any subsequent contract or SoW.
-
-## Who
-
-417 Tech Ltd ("we", "us", "our") is a company registered in England and Wales under company number [17118754](https://find-and-update.company-information.service.gov.uk/company/17118754), with registered office at:
-
-417 Tech Ltd
-Sparkhouse
-Rope Walk
-Lincoln
-England
-LN6 7DQ
-
-You can contact us by post at the above address, or by any of the following other contact methods:
-
-Phone: [+44 (0) 333 44 44 417](tel:+443334444417)
-Email: [contact (at) 417-tech (dot) com](mailto:contact@417-tech.com)
+[[who]]
 
 ## Information we collect
 
@@ -168,10 +120,10 @@ If you remain unhappy with how we've used your data after raising a complaint wi
 The ICO's address:           
 
 Information Commissioner's Office
-Wycliffe House  
-Water Lane  
-Wilmslow  
-Cheshire  
+Wycliffe House
+Water Lane
+Wilmslow
+Cheshire
 SK9 5AF
 
 Helpline number: 0303 123 1113
