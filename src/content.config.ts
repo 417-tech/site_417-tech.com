@@ -14,10 +14,12 @@ const services = defineCollection({
       summary: z.string(),
       closing: z.string(),
       order: z.number(),
+      rate: z.string(),
       subsections: z.array(
         z.object({
           title: z.string(),
           body: z.string(),
+          rate: z.string(),
           img: image().optional(), // resolved to optimised ImageMetadata by Astro
           source: z.string().optional(), // id of the matching entry in the credits collection, if the image needs attribution
           upcoming: z.boolean().optional(),
