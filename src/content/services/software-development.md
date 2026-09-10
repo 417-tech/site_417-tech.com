@@ -7,7 +7,8 @@ summary: >-
   We take on two types of software development work: changes to code that
   already exists, and projects built from scratch.
 closing: Whichever track applies, work is scoped and quoted before it starts.
-rate: £100/hour · £500/day
+rateDay: £500
+rateHour: £100
 rateNote: One-off custom quotes software development available by enquiry
 subsections:
   - title: Working with existing code
@@ -15,7 +16,6 @@ subsections:
       For codebases already in production, we provide documentation of what
       exists, single-script updates, language and version upgrades, refactoring,
       minor bug fixes and minor feature deployment.
-    # rate: Contact for quote
     img: ../../assets/uploads/net_switch.jpg
     source: net-switch
   - title: Starting from scratch
@@ -23,7 +23,6 @@ subsections:
       For new projects, we run a full scoping session to define requirements
       before writing any code. We have some flexibility on language and platform
       depending on the project.
-    # rate: Contact for quote
     img: ../../assets/uploads/misc_3d_printing.jpg
     source: misc-3d-printing
 ---

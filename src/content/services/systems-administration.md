@@ -7,17 +7,15 @@ summary: >-
   We look after the infrastructure that's already in place, and deploy new
   hardware when it's needed.
 closing: Systems administration is usually ongoing, not a single engagement.
-rate: Contact for quote
+rateNote: Contact for quote
 subsections:
   - title: Documentation
     body: >-
       We document existing infrastructure — servers, storage and configuration —
       so it's no longer only understood by whoever built it.
-    rate: Contact for quote
     img: ../../assets/uploads/net_router.jpg
     source: net-router
   - title: Hardware deployment
     body: We plan, procure and deploy physical and virtual infrastructure, from single servers to larger rollouts.
-    rate: Contact for quote
     img: ../../assets/uploads/netbox_dark.svg
 ---

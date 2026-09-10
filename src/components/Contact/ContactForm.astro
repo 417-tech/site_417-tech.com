@@ -20,8 +20,4 @@
 		</div>
 		<span class="text-caption text-muted">We'll get back to you as soon as we can.</span>
 	</form>
-	<script>
-		const service = new URLSearchParams(location.search).get('service');
-		const textarea = document.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
-		if (service && textarea && !textarea.value) textarea.value = `I'm interested in: ${service}\n\n`;
-	</script>
+	<script src="/scripts/contact-form.js" is:inline></script>
