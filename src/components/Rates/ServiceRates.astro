@@ -7,12 +7,13 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 ---
 {services.map((s) => (
   <div id={s.id} class="py-7 border-b-[1.5px] border-line scroll-mt-24 target:bg-surface">
-    <div class="flex flex-col gap-1.5 md:grid md:grid-cols-[1fr_10rem_8rem] md:gap-5 md:items-center">
+    <div class="flex flex-col gap-1.5 lg:grid lg:grid-cols-[1fr_34rem_12rem_8rem] lg:gap-5 lg:items-center">
       <a class="font-body font-normal text-body text-primary hover:text-(--accent)" href={`/services/${s.id}`}>{s.data.title}</a>
-      <span class="font-body font-light text-small md:text-body text-secondary">
-        <span class="md:hidden text-muted">Rate — </span>{s.data.rate}
+      <span class="font-body font-light text-caption text-muted text-left empty:hidden lg:empty:block">{s.data.rateNote}</span>
+      <span class="font-body font-light text-small lg:text-body text-secondary">
+        <span class="lg:hidden text-muted">Rate — </span>{s.data.rate}
       </span>
-      <a class="inline-flex items-center gap-1.5 font-display font-bold text-caption tracking-caption uppercase text-primary bg-orchid-dark px-3.5 py-2 rounded-sm hover:opacity-85 md:justify-self-start" href={`/contact?service=${encodeURIComponent(s.data.title)}`}>
+      <a class="inline-flex items-center gap-1.5 font-display font-bold text-caption tracking-caption uppercase text-primary bg-orchid-dark px-3.5 py-2 rounded-sm hover:opacity-85 lg:justify-self-start" href={`/contact?service=${encodeURIComponent(s.data.title)}`}>
         Enquire <Icon name="lucide:arrow-right" class="size-[1em]" />
       </a>
     </div>

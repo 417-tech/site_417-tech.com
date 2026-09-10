@@ -7,10 +7,8 @@ summary: >-
   We take on two types of software development work: changes to code that
   already exists, and projects built from scratch.
 closing: Whichever track applies, work is scoped and quoted before it starts.
-rate: |
-  £100 per hour
-  £500 per day
-  One-off custom quotes available by enquiry
+rate: £100/hour · £500/day
+rateNote: One-off custom quotes software development available by enquiry
 subsections:
   - title: Working with existing code
     body: >-

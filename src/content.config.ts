@@ -14,7 +14,8 @@ const services = defineCollection({
       summary: z.string(),
       closing: z.string(),
       order: z.number(),
-      rate: z.string(),
+      rate: z.string().optional(),
+      rateNote: z.string().optional(), // extra detail shown below the rate, e.g. multiple price points or terms
       subsections: z.array(
         z.object({
           title: z.string(),
