@@ -7,7 +7,7 @@ summary: >-
   We look after the infrastructure that's already in place, and deploy new
   hardware when it's needed.
 closing: Systems administration is usually ongoing, not a single engagement.
-# rateNote: Contact for quote
+rateNote: Contact for quote
 subsections:
   - title: Documentation
     body: >-
