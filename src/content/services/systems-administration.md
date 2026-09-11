@@ -20,5 +20,6 @@ subsections:
   - title: Hardware deployment
     body: We plan, procure and deploy physical and virtual infrastructure, from single servers to larger rollouts.
     img: ../../assets/uploads/netbox_dark.svg
-    rateOneoff: Depends on hardware
+    rateNote: Price will vary depending on hardware requirements
+    rateOneoff: Contact for quote
 ---
