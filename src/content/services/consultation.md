@@ -22,4 +22,6 @@ subsections:
     body: Before any development or infrastructure work begins, we run a scoping session to define requirements, constraints and success criteria.
     img: ../../assets/uploads/misc_smart_home.jpg
     source: misc-smart-home
+    rateOneoff: £0^
+    rateNote: ^Scoping calls are free if you engage us for the work
 ---
