@@ -1,0 +1,17 @@
+---
+import ServiceRates from '../components/Rates/ServiceRates.astro';
+import Base from '../layouts/Base.astro';
+---
+<Base title="Rates" description="Indicative rates for 417 Tech's service areas.">
+  <section class="pb-24">
+    <div class="font-display font-normal text-small tracking-caption uppercase text-(--accent) mb-6">Rate Card</div>
+    <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-6 max-w-[22ch]">Rates by service.</h1>
+    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-14">Indicative rates for each service area. Actual cost depends on scope — get in touch for a quote.</p>
+    <div class="border-t-[1.5px] border-line-strong">
+      <div class="hidden lg:grid lg:grid-cols-[1fr_34rem_12rem_8rem] gap-5 py-3 border-b-[1.5px] border-line-strong font-display font-bold text-caption tracking-caption uppercase text-muted">
+        <span>Service</span><span>Note</span><span>Rate</span><span></span>
+      </div>
+      <ServiceRates />
+    </div>
+  </section>
+</Base>

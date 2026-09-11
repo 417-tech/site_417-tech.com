@@ -7,10 +7,13 @@ summary: >-
   We design, build and maintain networks — from a single-site LAN to routing
   between multiple locations.
 closing: Network engineering is our most established service area — this page reflects our current process.
+rateNote: Contact for quote
 subsections:
-  - title: Documentation (NetBox)
+  - title: Documentation
     body: We document network infrastructure in NetBox, giving you a single source of truth for devices, IP addressing and connections.
     img: ../../assets/uploads/netbox_dark.svg
+    rateHour: £50
+    rateNote: One-off custom quotes available on enquiry
   - title: Switching & WiFi
     body: Switch configuration and wireless deployment, sized to the site and designed for coverage and capacity, not just uptime.
     img: ../../assets/uploads/net_switch.jpg

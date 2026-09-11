@@ -14,10 +14,18 @@ const services = defineCollection({
       summary: z.string(),
       closing: z.string(),
       order: z.number(),
+      rateHour: z.string().optional(),
+      rateDay: z.string().optional(),
+      rateOneoff: z.string().optional(),
+      rateNote: z.string().optional(), // extra detail shown below the rate, e.g. multiple price points or terms
       subsections: z.array(
         z.object({
           title: z.string(),
           body: z.string(),
+          rateHour: z.string().optional(),
+          rateDay: z.string().optional(),
+          rateOneoff: z.string().optional(),
+          rateNote: z.string().optional(), // stands in for the rate when no rateHour/rateDay/rateOneoff is set, e.g. "Contact for quote"
           img: image().optional(), // resolved to optimised ImageMetadata by Astro
           source: z.string().optional(), // id of the matching entry in the credits collection, if the image needs attribution
           upcoming: z.boolean().optional(),

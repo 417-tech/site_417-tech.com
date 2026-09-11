@@ -7,6 +7,8 @@ summary: >-
   We take on two types of software development work: changes to code that
   already exists, and projects built from scratch.
 closing: Whichever track applies, work is scoped and quoted before it starts.
+rateDay: £500
+rateHour: £100
 subsections:
   - title: Working with existing code
     body: >-
@@ -22,4 +24,5 @@ subsections:
       depending on the project.
     img: ../../assets/uploads/misc_3d_printing.jpg
     source: misc-3d-printing
+    rateNote: One-off custom quotes available on enquiry
 ---

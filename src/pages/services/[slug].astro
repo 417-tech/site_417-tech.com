@@ -20,7 +20,13 @@ const credits = await getCollection('credits');
     </a>
     <div class="font-display font-normal text-small tracking-caption uppercase  mb-6  text-(--accent)">{d.eyebrow}</div>
     <h1 class="font-display font-bold text-[clamp(32px,5vw,56px)] leading-tight mb-7 max-w-[24ch]">{d.title}</h1>
-    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-16">{d.summary}</p>
+    <p class="font-body font-light text-body-lg leading-body text-secondary max-w-[64ch] mb-8">{d.summary}</p>
+
+    <a class="idx-link inline-flex items-center gap-3 mb-16" href={`/rates#${s.id}`}>
+      <span class="font-display font-bold text-body text-primary">Rate card</span>
+      <Icon name="lucide:arrow-right" class="size-[1em] text-(--accent)" />
+    </a>
+
 
     <div class="border-t-[1.5px] border-line-strong">
       {d.subsections.map((sub, i) => (

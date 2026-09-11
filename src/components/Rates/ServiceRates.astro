@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import { formatRate } from '../../lib/rates';
+
+const services = (await getCollection('services'))
+  .filter((s) => formatRate(s.data) || s.data.rateNote)
+  .sort((a, b) => a.data.order - b.data.order);
+
+---
+{services.map((s) => (
+  <div id={s.id} class="py-7 border-b-[1.5px] border-line scroll-mt-24 target:bg-surface">
+    <div class="flex flex-col gap-1.5 lg:grid lg:grid-cols-[1fr_34rem_12rem_8rem] lg:gap-5 lg:items-center">
+      <a class="font-body font-normal text-body text-primary hover:text-(--accent)" href={`/services/${s.id}`}>{s.data.title}</a>
+      <span class="font-body font-light text-caption text-muted text-left empty:hidden lg:empty:block">{s.data.rateNote}</span>
+      <span class="font-body font-light text-small lg:text-body text-secondary empty:hidden lg:empty:block">
+        {formatRate(s.data) && (<><span class="lg:hidden text-muted">Rate — </span>{formatRate(s.data)}</>)}
+      </span>
+      <a class="inline-flex items-center gap-1.5 font-display font-bold text-caption tracking-caption uppercase text-primary bg-orchid-dark px-3.5 py-2 rounded-sm hover:opacity-85 lg:justify-self-start" href={`/contact?service=${encodeURIComponent(s.data.title)}`}>
+        Enquire <Icon name="lucide:arrow-right" class="size-[1em]" />
+      </a>
+    </div>
+    <div class="mt-4 flex flex-col gap-3 pl-5 border-l-[1.5px] border-line">
+      {s.data.subsections.filter((sub) => formatRate(sub) || sub.rateNote).map((sub) => (
+        <div class="flex flex-col gap-1 md:grid md:grid-cols-[1fr_34rem_12rem_8rem] md:gap-5 md:items-center">
+          <span class="font-body font-light text-body text-secondary">{sub.title}</span>
+          <span class="font-body font-light text-caption text-muted text-left empty:hidden md:empty:block">{sub.rateNote}</span>
+          <span class="font-body font-light text-small text-muted empty:hidden md:empty:block">
+            {formatRate(sub) && (<><span class="md:hidden">Rate — </span>{formatRate(sub)}</>)}
+          </span>
+          <a class="inline-flex items-center justify-center size-7 rounded-sm text-muted hover:text-primary hover:bg-orchid-dark md:justify-self-start" href={`/contact?service=${encodeURIComponent(`${sub.title} (${s.data.title})`)}`} aria-label={`Enquire about ${sub.title}`}>
+            <Icon name="lucide:arrow-right" class="size-[1em]" />
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+))}

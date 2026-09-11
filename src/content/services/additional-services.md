@@ -5,6 +5,7 @@ eyebrow: Services / Additional Services
 oneLiner: Technical work that doesn't sit under one heading.
 summary: Additional services covers technical work that doesn't sit neatly under our other service areas.
 closing: If you're not sure which service area applies, contact us and we'll point you in the right direction.
+rateNote: Contact for quote
 subsections:
   - title: Smart building
     body: Home Assistant deployments, integrating Zigbee, Z-Wave, Matter and Thread devices into a single system.
