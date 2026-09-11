@@ -13,13 +13,13 @@ subsections:
     body: >-
       We document existing infrastructure — servers, storage and configuration —
       so it's no longer only understood by whoever built it.
-    img: ../../assets/uploads/net_router.jpg
+    img: ../../assets/uploads/netbox_dark.svg
     source: net-router
     rateHour: £50
     rateNote: One-off custom quotes available on enquiry
   - title: Hardware deployment
     body: We plan, procure and deploy physical and virtual infrastructure, from single servers to larger rollouts.
-    img: ../../assets/uploads/netbox_dark.svg
+    img: ../../assets/uploads/net_router.jpg
     rateNote: Price will vary depending on hardware requirements
     rateOneoff: Contact for quote
 ---
