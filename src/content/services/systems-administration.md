@@ -16,7 +16,7 @@ subsections:
     img: ../../assets/uploads/net_router.jpg
     source: net-router
     rateHour: £50
-    rateNote: One-off pricing available on enquiry
+    rateNote: One-off custom quotes available on enquiry
   - title: Hardware deployment
     body: We plan, procure and deploy physical and virtual infrastructure, from single servers to larger rollouts.
     img: ../../assets/uploads/netbox_dark.svg
